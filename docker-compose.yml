@@ -1,5 +1,6 @@
 services:
   php:
+    container_name: bbphp-emailsender-core-php
     build:
       context: .
       dockerfile: Dockerfile

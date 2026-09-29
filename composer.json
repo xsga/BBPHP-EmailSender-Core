@@ -12,7 +12,8 @@
     }
   ],
   "require": {
-    "php": "^8.4"
+    "php": "^8.4",
+    "xsga/bbphp-exception": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^4.0",
@@ -28,18 +29,13 @@
       "Xsga\\BBPHP\\EmailSender\\Core\\": "Src/Xsga/BBPHP-EmailSender-Core/"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-
-    }
-  },
   "scripts": {
     "lint": "parallel-lint --exclude vendor .",
-    "style": "phpcs -p --colors --standard=PSR12 Bin Config Public Src",
-    "style-fix": "phpcbf -p --standard=PSR12 Bin Config Public Src",
+    "style": "phpcs -p --colors --standard=PSR12 Src",
+    "style-fix": "phpcbf -p --standard=PSR12 Src",
     "analyze-errors": "psalm --output-format=console --show-info=false --no-cache",
     "analyze-info": "psalm --output-format=console --show-info=true --no-cache",
-    "analyze-md": "phpmd Bin,Config,Public,Src ansi cleancode,codesize,controversial,design,naming,unusedcode",
+    "analyze-md": "phpmd Src ansi cleancode,codesize,controversial,design,naming,unusedcode",
     "phploc": "phploc Src"
   },
   "config": {
